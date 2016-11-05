@@ -18,8 +18,5 @@ public class TokenTest {
 
     @Test
     public void testToString() {
-        Token token = new Token();
-
-        assertEquals(token.toString(), "Token");
     }
 }

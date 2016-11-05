@@ -62,6 +62,8 @@ public class Lexer {
 
         int lineNumber = reader.getLineNumber();
         Matcher matcher = pattern.matcher(line);
+//        why?
+        matcher.useTransparentBounds(true).useAnchoringBounds(false);
         int startPos = 0;
         int endPos = line.length();
 
@@ -70,7 +72,7 @@ public class Lexer {
 
             if (matcher.lookingAt()) {
                 addToken(lineNumber, matcher);
-                endPos = matcher.end();
+                startPos = matcher.end();
             } else
                 throw new ParseException("bad token at line: " + lineNumber);
         }
@@ -156,6 +158,10 @@ public class Lexer {
         @Override
         public int getNumber() {
             return value;
+        }
+
+        public String getText() {
+            return String.valueOf(value);
         }
     }
 
