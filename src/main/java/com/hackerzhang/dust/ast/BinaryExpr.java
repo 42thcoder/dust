@@ -2,8 +2,8 @@ package com.hackerzhang.dust.ast;
 
 import java.util.List;
 
-public class BinaryExpression extends ASTList {
-    public BinaryExpression(List<ASTree> children) {
+public class BinaryExpr extends ASTList {
+    public BinaryExpr(List<ASTree> children) {
         super(children);
     }
 
@@ -20,3 +20,4 @@ public class BinaryExpression extends ASTList {
         return child(2);
     }
 }
+
